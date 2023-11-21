@@ -1,0 +1,47 @@
+﻿
+@model List<Teacher>
+
+<link href="~/css/formdesigncss.css" rel="stylesheet" />
+
+<div class="container">
+    <form action="Create" method="post">
+        <div class="row">
+            <div class="col-25">
+                <label for="CourseName">Course Name</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="CourseName" name="CourseName" placeholder="Your course..">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="lname"> Cabcity</label>
+            </div>
+            <div class="col-75">
+                <input type="number" id="CourseCapcity" name="CourseCapcity"max="25">
+            </div>
+        </div>
+        <div class="dropdown">
+            <label for="Teacher">Choose a Teacher:</label>
+            <select name="TeacherId" id="TeacherId" class="dropdown-content">
+                @foreach(Teacher teacher in Model)
+                {
+                    <option value="@teacher.TeacherId">
+                        @teacher.TeacherName
+                    </option>
+
+                }
+
+            </select>
+
+
+
+        </div>
+      
+
+        <br>
+        <div class="row">
+            <input type="submit" value="save">
+        </div>
+    </form>
+</div>

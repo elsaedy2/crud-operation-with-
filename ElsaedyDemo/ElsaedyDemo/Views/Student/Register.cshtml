@@ -1,0 +1,50 @@
+﻿@model ElsaedyDemo.Models.VIEW_MODEL.StudentCourseVM
+
+
+
+
+
+
+<div class="container">
+    <form action="Create" method="post">
+        
+        <div class="dropdown">
+            <label for="student">Student</label>
+            <select name="StudentId" id="StudentId" class="dropdown-content">
+                @foreach (Student student in Model.students)
+                {
+                    <option value="@student.StudentId">
+                        @student.StudentName
+                    </option>
+
+                }
+
+            </select>
+
+
+
+        </div>
+        <div class="dropdown">
+            <label for="Courses">Course:</label>
+            <select name="CourseId" id="CourseId" class="dropdown-content">
+                @foreach (Course courses in Model.courses)
+                {
+                    <option value="@courses.CourseId">
+                        @courses.CourseName
+                    </option>
+
+                }
+
+            </select>
+
+
+
+        </div>
+
+
+        <br>
+        <div class="row">
+            <input type="submit" value="Register">
+        </div>
+    </form>
+</div>
